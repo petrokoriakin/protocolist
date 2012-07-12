@@ -36,7 +36,7 @@ module Protocolist
 
     def self.included base
       base.extend ClassMethods
-      base.send :incluse, InstanceMethods
+      base.send :include, InstanceMethods
     end
 
     module ClassMethods
