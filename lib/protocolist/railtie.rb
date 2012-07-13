@@ -2,12 +2,12 @@ module Protocolist
   class Railtie < Rails::Railtie
     initializer 'protocolist.model_additions' do
       ActiveSupport.on_load :active_record do
-        include  ActiveRecordModelAdditions
+        include  ModelAdditions
       end
       if defined?(Mongoid)
         Mongoid::Document.module_eval do
           included do
-            include MongoidModelAdditions
+            include ModelAdditions
           end
         end
       end
